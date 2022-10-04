@@ -1,0 +1,77 @@
+version: '3.9'
+
+services:
+  web:
+    container_name: KH_DJANGO
+    build: ./
+    restart: always
+    command: gunicorn -c gunicorn.ini.py app.wsgi:application
+    ports:
+      - 127.0.0.1:8800:8800
+    volumes:
+      - static:/usr/src/static
+      - media:/usr/src/media
+    env_file:
+      - ./.env.prod
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8800/admin/login/"]
+      interval: 10s
+      timeout: 1s
+      retries: 10
+      start_period: 10s
+    depends_on:
+      - cache
+      - db
+  cache:
+    container_name: KH_MEMCACHED
+    image: memcached
+    ports:
+      - "127.0.0.1:11211:11211"
+    entrypoint:
+      - memcached
+      - -m 64
+  db:
+    container_name: KH_DB
+    image: postgres:13-alpine
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env.db.prod
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -q -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 5s
+      timeout: 1s
+      retries: 30
+  pgbackups:
+    container_name: KH_DB_BACKUP
+    image: prodrigestivill/postgres-backup-local
+    restart: always
+    volumes:
+      - ./backup:/backups
+    env_file:
+      - ./.env.db.prod
+    links:
+      - db:db
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /srv/yaad/postgres
+  static:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /srv/yaad/static
+  media:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /srv/yaad/media

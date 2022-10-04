@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Payment</title>
+    <link rel="stylesheet" href="//khatokhal.org/fonts/fonts.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style type="text/css">
+        body {
+            background: #f2f2f2;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            font-family: vazir;
+            direction: rtl;
+        }
+
+        .payment {
+            border: 1px solid #f2f2f2;
+            height: 280px;
+            border-radius: 20px;
+            background: #fff;
+            min-height: 300px;
+        }
+
+        .payment_header {
+            padding: 20px;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .payment_header.success {
+            background: #78cca4;
+
+        }
+
+        .payment_header.failed {
+            background: #ff5722;
+
+        }
+
+        .check {
+            margin: 0px auto;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background: #fff;
+            text-align: center;
+        }
+
+        .check i {
+            vertical-align: middle;
+            line-height: 50px;
+            font-size: 30px;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 25px;
+            padding-top: 25px;
+        }
+
+        .content p {
+            margin-bottom: 40px
+        }
+
+        .content a {
+            width: 200px;
+            height: 35px;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 20px;
+            transition: all ease-in-out 0.3s;
+        }
+
+        .content a.failed {
+            background: #ff5722;
+        }
+
+        .content a.success {
+            background: #78cca4;
+        }
+
+        .content a:hover {
+            text-decoration: none;
+            background: #000;
+        }
+
+        .video_ad {
+            display: inline-block;
+            width: 48%;
+            margin-top: 20px;
+            margin-left: 1%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto mt-5">
+                <div class="payment">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                        لطفا کمی صبر کنید ...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = parseInt(urlParams.get('status'));
+
+        const HTML = (status) => `
+		<div class="payment_header ${status === 10 ? 'success' : 'failed'}">
+		   <div class="check"><i class="fa ${status === 10 ? 'fa-check' : 'fa-times'}" aria-hidden="true"></i></div>
+		</div>
+		<div class="content">
+		   <h1>پرداخت ${status === 10 ? 'موفق' : 'ناموفق'}</h1>
+		   <p>${status === 10 ? 'پرداخت شما با موفقیت انجام شد. برای مشاهده محتوای خریداری شده به برنامه برگردید' : 'پرداخت شما با موفقیت انجام نشد.'}</p>
+		   <a class="${status === 10 ? 'success' : 'failed'}" href="close://app/">بازگشت به برنامه</a>
+		</div>
+	`;
+        if (status !== 10)
+            document.querySelector('.payment').innerHTML = HTML(status);
+        else {
+            fetch(`https://srv.yaad.app/khatokhal/payment/callback/idpay/${window.location.search}`)
+                .then(response => {
+                    console.log(response.ok)
+                    document.querySelector('.payment').innerHTML = HTML(response.ok ? 10 : 0);
+                })
+                .catch(err => {
+                    console.log(err);
+                    document.querySelector('.payment').innerHTML = HTML(0);
+                });
+        }
+
+    </script>
+
+</body>
+
+</html>

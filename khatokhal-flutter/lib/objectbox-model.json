@@ -1,0 +1,250 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:9026217495659509626",
+      "lastPropertyId": "4:8037336258163576348",
+      "name": "Answers",
+      "properties": [
+        {
+          "id": "1:2600856777113908153",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4169861367118657732",
+          "name": "qid",
+          "type": 6,
+          "flags": 40,
+          "indexId": "1:678602098519208647"
+        },
+        {
+          "id": "3:5801445767876645637",
+          "name": "choice",
+          "type": 6
+        },
+        {
+          "id": "4:8037336258163576348",
+          "name": "updatedAt",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:1345968436739853628",
+      "lastPropertyId": "3:3473053265566526495",
+      "name": "ContentData",
+      "properties": [
+        {
+          "id": "1:7527150129160921817",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6280709600252661263",
+          "name": "cid",
+          "type": 6,
+          "flags": 40,
+          "indexId": "2:4225760951276189186"
+        },
+        {
+          "id": "3:3473053265566526495",
+          "name": "type",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:6313812394844291094",
+      "lastPropertyId": "9:8600151206394528167",
+      "name": "ProgressData",
+      "properties": [
+        {
+          "id": "1:116843549703692797",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5882168351439854127",
+          "name": "bid",
+          "type": 6,
+          "flags": 40,
+          "indexId": "3:4697143975373586891"
+        },
+        {
+          "id": "3:5662256899362725070",
+          "name": "steps",
+          "type": 6
+        },
+        {
+          "id": "4:1627176903775469825",
+          "name": "total",
+          "type": 6
+        },
+        {
+          "id": "5:4139606115133181542",
+          "name": "courseID",
+          "type": 6
+        },
+        {
+          "id": "6:1025428029592198294",
+          "name": "courseName",
+          "type": 9
+        },
+        {
+          "id": "7:3278922658056779471",
+          "name": "lastChapterIndex",
+          "type": 6
+        },
+        {
+          "id": "9:8600151206394528167",
+          "name": "chaptersOffset",
+          "type": 30
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:5517074832544338326",
+      "lastPropertyId": "3:2393227471656011276",
+      "name": "StepData",
+      "properties": [
+        {
+          "id": "1:8910154477712890921",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1362017065922689523",
+          "name": "sid",
+          "type": 6,
+          "flags": 40,
+          "indexId": "4:3364044898704410168"
+        },
+        {
+          "id": "3:2393227471656011276",
+          "name": "isRead",
+          "type": 1
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:1579010052883778537",
+      "lastPropertyId": "11:4627085634441231846",
+      "name": "NoteItem",
+      "properties": [
+        {
+          "id": "1:158144353180630537",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:7623931670803131135",
+          "name": "bid",
+          "type": 6,
+          "flags": 8,
+          "indexId": "5:6275534022597068381"
+        },
+        {
+          "id": "3:1516351325785597196",
+          "name": "isSynced",
+          "type": 1
+        },
+        {
+          "id": "5:2633254375159778336",
+          "name": "updatedAt",
+          "type": 6,
+          "flags": 8,
+          "indexId": "6:6176465832541929234"
+        },
+        {
+          "id": "6:7216831823031394475",
+          "name": "text",
+          "type": 9
+        },
+        {
+          "id": "7:8868317265343951635",
+          "name": "media",
+          "type": 9
+        },
+        {
+          "id": "9:8480995480175100651",
+          "name": "content",
+          "type": 9
+        },
+        {
+          "id": "10:5183344638064873909",
+          "name": "dbNoteType",
+          "type": 6
+        },
+        {
+          "id": "11:4627085634441231846",
+          "name": "dbMediaType",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:1117168766372394608",
+      "lastPropertyId": "5:6353265683147703629",
+      "name": "FavoriteItem",
+      "properties": [
+        {
+          "id": "1:250494918306823201",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8147263424930796661",
+          "name": "bookData",
+          "type": 9
+        },
+        {
+          "id": "3:4273242002148470335",
+          "name": "isSynced",
+          "type": 1
+        },
+        {
+          "id": "4:56139855533583393",
+          "name": "updatedAt",
+          "type": 6
+        },
+        {
+          "id": "5:6353265683147703629",
+          "name": "bid",
+          "type": 6,
+          "flags": 8,
+          "indexId": "7:312455771457185538"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "6:1117168766372394608",
+  "lastIndexId": "7:312455771457185538",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    3037330081644541394,
+    4971675831589539533,
+    6379528602192737009
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

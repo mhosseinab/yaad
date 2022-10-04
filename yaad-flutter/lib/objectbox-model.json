@@ -1,0 +1,287 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:4563218010162879108",
+      "lastPropertyId": "3:6646437888379198374",
+      "name": "ContentData",
+      "properties": [
+        {
+          "id": "1:8670501140057823006",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5895178826090598036",
+          "name": "cid",
+          "type": 6,
+          "flags": 40,
+          "indexId": "1:5171179679267562432"
+        },
+        {
+          "id": "3:6646437888379198374",
+          "name": "type",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:4446817241284753361",
+      "lastPropertyId": "5:6821822948695139884",
+      "name": "FavoriteItem",
+      "properties": [
+        {
+          "id": "1:5494707094200503769",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2135161876138173592",
+          "name": "bid",
+          "type": 6,
+          "flags": 8,
+          "indexId": "2:3785087039510899673"
+        },
+        {
+          "id": "3:9112271624153417942",
+          "name": "bookData",
+          "type": 9
+        },
+        {
+          "id": "4:5005027425435054429",
+          "name": "isSynced",
+          "type": 1
+        },
+        {
+          "id": "5:6821822948695139884",
+          "name": "updatedAt",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:5881342403819053536",
+      "lastPropertyId": "9:373209885805525641",
+      "name": "NoteItem",
+      "properties": [
+        {
+          "id": "1:2147471976017334213",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4252183048135675007",
+          "name": "bid",
+          "type": 6,
+          "flags": 8,
+          "indexId": "3:455826578627965591"
+        },
+        {
+          "id": "3:4764524233539691359",
+          "name": "isSynced",
+          "type": 1
+        },
+        {
+          "id": "4:2130282353027768359",
+          "name": "dbNoteType",
+          "type": 6
+        },
+        {
+          "id": "5:6655819107911040800",
+          "name": "content",
+          "type": 9
+        },
+        {
+          "id": "6:1018000779065974825",
+          "name": "updatedAt",
+          "type": 6,
+          "flags": 8,
+          "indexId": "4:8493079364630879206"
+        },
+        {
+          "id": "7:4101422913059471650",
+          "name": "text",
+          "type": 9
+        },
+        {
+          "id": "8:6313989476965415447",
+          "name": "media",
+          "type": 9
+        },
+        {
+          "id": "9:373209885805525641",
+          "name": "dbMediaType",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:3405867264433745772",
+      "lastPropertyId": "10:2034411764712415869",
+      "name": "ProgressData",
+      "properties": [
+        {
+          "id": "1:2822581950506050496",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3829322735860229138",
+          "name": "bid",
+          "type": 6,
+          "flags": 40,
+          "indexId": "5:8583525657888204604"
+        },
+        {
+          "id": "3:7720707224436204166",
+          "name": "steps",
+          "type": 6
+        },
+        {
+          "id": "4:943228812169050501",
+          "name": "total",
+          "type": 6
+        },
+        {
+          "id": "5:223293623502524291",
+          "name": "courseID",
+          "type": 6
+        },
+        {
+          "id": "6:3710011766806959830",
+          "name": "courseName",
+          "type": 9
+        },
+        {
+          "id": "7:5022424880820362762",
+          "name": "lastChapterIndex",
+          "type": 6
+        },
+        {
+          "id": "8:7204182309608027730",
+          "name": "chaptersOffset",
+          "type": 30
+        },
+        {
+          "id": "9:84647203639909720",
+          "name": "updatedAt",
+          "type": 6
+        },
+        {
+          "id": "10:2034411764712415869",
+          "name": "lastCompletedChapter",
+          "type": 30
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:117434558778422587",
+      "lastPropertyId": "9:6074673740609147139",
+      "name": "Question",
+      "properties": [
+        {
+          "id": "1:5787518708210071012",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:443335155718613339",
+          "name": "qid",
+          "type": 6,
+          "flags": 8,
+          "indexId": "6:5635127164842535664"
+        },
+        {
+          "id": "3:307344755498199953",
+          "name": "bid",
+          "type": 6,
+          "flags": 8,
+          "indexId": "7:4500072241082727912"
+        },
+        {
+          "id": "4:5705709502693577065",
+          "name": "choice",
+          "type": 6
+        },
+        {
+          "id": "5:4846234551243837006",
+          "name": "updatedAt",
+          "type": 6,
+          "flags": 8,
+          "indexId": "8:4889994337084852386"
+        },
+        {
+          "id": "6:4071057270965441903",
+          "name": "step",
+          "type": 6,
+          "flags": 8,
+          "indexId": "9:1520411700022475134"
+        },
+        {
+          "id": "7:3045737691430424900",
+          "name": "content",
+          "type": 9
+        },
+        {
+          "id": "8:6375446358478940634",
+          "name": "isCorrect",
+          "type": 1
+        },
+        {
+          "id": "9:6074673740609147139",
+          "name": "title",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:41409114653119084",
+      "lastPropertyId": "3:3482761613851747915",
+      "name": "StepData",
+      "properties": [
+        {
+          "id": "1:5732627956860326767",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4237790256325356950",
+          "name": "sid",
+          "type": 6,
+          "flags": 40,
+          "indexId": "10:7744976464761557373"
+        },
+        {
+          "id": "3:3482761613851747915",
+          "name": "isRead",
+          "type": 1
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "6:41409114653119084",
+  "lastIndexId": "10:7744976464761557373",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

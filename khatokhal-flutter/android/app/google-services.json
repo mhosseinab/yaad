@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "155729707757",
+    "firebase_url": "https://khatokhal-org.firebaseio.com",
+    "project_id": "khatokhal-org",
+    "storage_bucket": "khatokhal-org.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155729707757:android:eda6e506811895febe82e4",
+        "android_client_info": {
+          "package_name": "org.khatokhal.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155729707757-fvkkle1siutaarkkebsbvrhfat5na4fk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIaEIP_hDw0gM4AyJOzpFvGEQOFwb_lLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155729707757-fvkkle1siutaarkkebsbvrhfat5na4fk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
